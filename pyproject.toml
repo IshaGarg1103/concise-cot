@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "concise-cot"
+version = "0.1.0"
+description = "Length-controlled reasoning distillation into a compact math model."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "accelerate",
+    "datasets",
+    "numpy",
+    "peft",
+    "pyyaml",
+    "sympy",
+    "transformers",
+    "trl",
+    "wandb",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "ruff",
+]
+
+[project.scripts]
+concise-cot-audit-eval = "concise_cot.audit_eval:main"
+concise-cot-build-data = "concise_cot.data:main"
+concise-cot-compress = "concise_cot.compress:main"
+concise-cot-eval = "concise_cot.eval:main"
+concise-cot-gen-teacher = "concise_cot.gen_teacher:main"
+concise-cot-inspect-jsonl = "concise_cot.inspect_jsonl:main"
+concise-cot-make-report-artifacts = "concise_cot.make_report_artifacts:main"
+concise-cot-sample-adapter = "concise_cot.sample_adapter:main"
+concise-cot-score-tts = "concise_cot.tts_score:main"
+concise-cot-train = "concise_cot.train:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

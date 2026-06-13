@@ -1,0 +1,53 @@
+project:
+  seed: 13
+  output_dir: outputs
+
+models:
+  teacher: Qwen/Qwen3-32B
+  student: Qwen/Qwen3-4B
+
+data:
+  train_sources:
+    - gsm8k
+    - math
+  eval_sources:
+    - gsm8k_test
+    - math_500
+  traces_path: data/traces/teacher_traces.jsonl
+  budgeted_path: data/budgeted/budgeted_traces.jsonl
+
+budgets:
+  L0: 1.0
+  L1: 0.6
+  L2: 0.35
+  L3: 0.15
+
+generation:
+  samples_per_problem: 4
+  temperature: 0.7
+  max_tokens: 4096
+  tensor_parallel_size: 1
+  gpu_memory_utilization: 0.9
+  dtype: bfloat16
+  trust_remote_code: true
+
+training:
+  output_dir: ckpts/concise-cot
+  num_train_epochs: 2
+  per_device_train_batch_size: 8
+  gradient_accumulation_steps: 4
+  learning_rate: 0.0002
+  max_seq_length: 4096
+  lora_rank: 32
+  lora_alpha: 64
+  lora_dropout: 0.05
+
+eval:
+  backend: vllm
+  max_new_tokens: 2048
+  batch_size: 8
+  progress_every: 32
+  vllm_chunk_size: 1024
+  report_to:
+    - wandb
+  wandb_project: concise-cot

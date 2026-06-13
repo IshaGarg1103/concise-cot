@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Local/editor
+.DS_Store
+
+# Generated experiment data and outputs
+data/traces/*.jsonl
+data/budgeted/*.jsonl
+outputs/**/*.jsonl
+outputs/**/*.json
+outputs/**/*.txt
+outputs/**/*.csv
+outputs/**/*.md
+outputs/**/*.png
+!outputs/**/.gitkeep
+
+# Training artifacts
+ckpts/
+wandb/
+
+# Copied VM artifacts are for local backup, not GitHub
+vm_artifacts/
+
+# Hugging Face upload staging
+hf_upload/
