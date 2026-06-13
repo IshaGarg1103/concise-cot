@@ -97,6 +97,16 @@ PYTHONPATH=src python -m pytest tests -q
 
 The training run contains bf16 LoRA SFT loss and token-accuracy curves. The fixed eval run contains the budget-wise accuracy/token metrics and Pareto plot.
 
+## References and Inspiration
+
+- Efficient reasoning survey: [Stop Overthinking: A Survey on Efficient Reasoning for Large Language Models](https://arxiv.org/html/2503.16419v1) and the [Awesome Efficient Reasoning LLMs](https://github.com/Eclipsess/Awesome-Efficient-Reasoning-LLMs) tracker.
+- Faithfulness and decorative reasoning: [Can Aha Moments Be Fake? Identifying True and Decorative Thinking Steps in Chain-of-Thought](https://arxiv.org/abs/2510.24941) and the [True vs Decorative Thinking project page](https://andotalao24.github.io/Identify_true_decorative_thinking/).
+- R1-style self-reflection caution: [There May Not be Aha Moment in R1-Zero-like Training](https://sail.sea.com/blog/articles/62) and [Understanding R1-Zero-Like Training: A Critical Perspective](https://arxiv.org/html/2503.20783).
+- Reflection analysis: [First Try Matters: Revisiting the Role of Reflection in Reasoning Models](https://arxiv.org/html/2510.08308v1).
+- Controllable CoT compression: [TokenSkip: Controllable Chain-of-Thought Compression in LLMs](https://arxiv.org/html/2502.12067v1), [C3oT: Generating Shorter Chain-of-Thought without Compromising Effectiveness](https://arxiv.org/html/2412.11664), and [CoT-Valve: Length-Compressible Chain-of-Thought Tuning](https://arxiv.org/html/2502.09601).
+- Concise reasoning and token budgets: [Self-Training Elicits Concise Reasoning in Large Language Models](https://arxiv.org/abs/2502.20122), [Token-Budget-Aware LLM Reasoning / TALE](https://aclanthology.org/2025.findings-acl.1274/), and [Chain of Draft: Thinking Faster by Writing Less](https://arxiv.org/abs/2502.18600v2).
+- Teacher lineage: [DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning](https://arxiv.org/html/2501.12948v1), [DeepSeek-R1 in Nature](https://www.nature.com/articles/s41586-025-09422-z), [DeepSeek-R1-Distill-Qwen-32B](https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Qwen-32B), and [QwQ-32B](https://huggingface.co/Qwen/QwQ-32B).
+
 ## Limitations
 
 - GSM8K is the completed benchmark; MATH-500 remains a useful harder follow-up.
