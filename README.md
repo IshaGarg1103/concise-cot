@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Concise-CoT
 
 Length-controlled reasoning distillation from `Qwen/Qwen3-32B` into a compact `Qwen/Qwen3-4B` student.
@@ -158,3 +159,6 @@ The training run contains bf16 LoRA SFT loss and token-accuracy curves. The fixe
 - GSM8K is the completed benchmark; MATH-500 remains a useful harder follow-up.
 - RQ2 is structural evidence, not full causal proof.
 - Evaluation caps matter: under-capping `L0` can make full reasoning look artificially weak.
+=======
+# concise-cot
+>>>>>>> 192f74cf1872af80b598f660335ddc82069794bf
